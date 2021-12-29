@@ -21,7 +21,14 @@ RSpec.describe Machine, type: :model do
     describe '#avg_snack_price' do
       it 'should return the average snack price' do
         expected = (snack_1.price + snack_2.price + snack_3.price).to_f /  3.0
+
         expect(machine_1.avg_snack_price).to eq(expected)
+      end
+    end
+
+    describe '#snack_total' do
+      it 'should return the total amount of snacks' do
+        expect(machine_1.snack_total).to eq(3)
       end
     end
   end
